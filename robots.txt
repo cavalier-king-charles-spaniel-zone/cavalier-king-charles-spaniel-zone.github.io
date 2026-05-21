@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cavalier-king-charles-spaniel-zone.github.io/sitemap.xml

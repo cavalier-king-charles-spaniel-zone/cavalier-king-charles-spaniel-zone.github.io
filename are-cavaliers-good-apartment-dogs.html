@@ -5,222 +5,56 @@
 <meta name="description" content="Your complete resource for Cavalier King Charles Spaniel lovers. Breed facts, care tips, national day celebration guide and more.">
 <meta name="robots" content="index, follow">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #222;
-    background: #f8f8f8;
-  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Calibri', 'Candara', sans-serif; background: #f5f7fb; color: #1f2937; line-height: 1.72; }
   a { color: #0066cc;  color: #14532d; text-decoration: none;  }
-  a:hover { text-decoration: underline; color: #104224; }
-
-  /* ── Top bar ── */
-  .topbar {
-    background: #14532d;
-    color: #fff;
-    padding: 0 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-  }
-  .topbar-inner {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 54px;
-  }
-  .topbar-brand {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 0.01em;
-  }
-  .topbar-nav {
-    display: flex;
-    gap: 4px;
-    list-style: none;
-  }
-  .topbar-nav a { color: #0066cc; 
-    color: rgba(255,255,255,0.88);
-    font-size: 0.88rem;
-    padding: 6px 12px;
-    border-radius: 4px;
-    transition: background 0.15s;
-   }
-  .topbar-nav a:hover {
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    text-decoration: none;
-  }
-  @media(max-width:600px) {
-    .topbar-nav { display: none; }
+  a:hover { text-decoration: underline; }
+  .topbar { background: #14532d; box-shadow: 0 2px 8px rgba(0,0,0,0.14); }
+  .topbar-inner { max-width: 1120px; margin: 0 auto; padding: 0 22px; min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .brand { color: #fff; font-weight: 700; font-size: 1.04rem; }
+  .nav { display: flex; gap: 14px; flex-wrap: wrap; }
+  .nav a { color: #0066cc;  color: rgba(255,255,255,0.92); font-size: 0.9rem;  }
+  .crumbs { background: #fff; border-bottom: 1px solid #e5e7eb; }
+  .crumbs-inner { max-width: 1120px; margin: 0 auto; padding: 10px 22px; color: #6b7280; font-size: 0.87rem; display: flex; gap: 8px; flex-wrap: wrap; }
+  .hero { background: linear-gradient(135deg, #14532d 0%, #15803d 100%); color: #fff; }
+  .hero-inner { max-width: 1120px; margin: 0 auto; padding: 34px 22px; }
+  .hero p { margin: 0 0 10px; opacity: 0.86; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.75rem; }
+  .hero h1 { margin: 0 0 10px; font-size: 2.15rem; line-height: 1.12; max-width: 820px; }
+  .hero .lead { margin: 0; max-width: 760px; font-size: 1.02rem; text-transform: none; letter-spacing: 0; opacity: 0.92; }
+  .layout { max-width: 1120px; margin: 28px auto 48px; padding: 0 22px; display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 26px; align-items: start; }
+  .article { background: #fff; border-radius: 14px; padding: 30px; box-shadow: 0 1px 8px rgba(0,0,0,0.08); }
+  .article .meta { color: #0066cc;  color: #6b7280; font-size: 0.9rem; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid #e5e7eb;  }
+  .article h2 { color: #0f172a; font-size: 1.45rem; margin: 34px 0 14px; line-height: 1.24; }
+  .article h3 { color: #14532d; font-size: 1.08rem; margin: 22px 0 10px; }
+  .article p, .article li { color: #374151; }
+  .article ul, .article ol { padding-left: 22px; margin: 12px 0 18px; }
+  .article table { width: 100%; border-collapse: collapse; margin: 20px 0 26px; font-size: 0.95rem; }
+  .article th { text-align: left; background: #eef2ff; color: #0f172a; padding: 12px 14px; border: 1px solid #dbe2ea; }
+  .article td { padding: 12px 14px; border: 1px solid #dbe2ea; vertical-align: top; }
+  .article blockquote { margin: 20px 0; padding: 16px 18px; border-left: 4px solid #14532d; background: #f8fafc; color: #334155; }
+  details { border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 16px; margin: 10px 0; background: #fafafa; }
+  summary { cursor: pointer; font-weight: 600; color: #0f172a; }
+  .sidebar { display: grid; gap: 18px; position: sticky; top: 18px; }
+  .sidebar-panel { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 1px 8px rgba(0,0,0,0.08); }
+  .sidebar-panel h3 { margin: 0 0 10px; color: #0f172a; font-size: 1rem; }
+  .sidebar-panel p, .sidebar-panel li { color: #4b5563; font-size: 0.92rem; }
+  .sidebar-panel ul { margin: 0; padding-left: 18px; }
+  .sidebar-newsletter { background: linear-gradient(135deg, #14532d 0%, #15803d 100%); }
+  .sidebar-newsletter h3, .sidebar-newsletter p { color: #fff; }
+  .sidebar-newsletter input { width: 100%; padding: 10px 12px; border: 0; border-radius: 6px; margin: 10px 0 8px; }
+  .sidebar-newsletter button { width: 100%; padding: 10px 12px; border: 0; border-radius: 6px; background: #fff; color: #14532d; font-weight: 700; cursor: pointer; }
+  .footer { background: #0f172a; color: rgba(255,255,255,0.74); }
+  .footer-inner { max-width: 1120px; margin: 0 auto; padding: 22px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.87rem; }
+  .footer a { color: #0066cc;  color: rgba(255,255,255,0.9);  }
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .hero h1 { font-size: 1.74rem; }
   }
 
-  /* ── Breadcrumb ── */
-  .breadcrumb {
-    background: #fff;
-    border-bottom: 1px solid #e5e7eb;
-  }
-  .breadcrumb-inner {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 8px 20px;
-    font-size: 0.82rem;
-    color: #6b7280;
-  }
-  .breadcrumb-inner a { color: #0066cc;  color: #14532d;  }
-  .breadcrumb-inner span { margin: 0 5px; }
-
-  /* ── Layout wrapper ── */
-  .page-wrap {
-    max-width: 1000px;
-    margin: 28px auto;
-    padding: 0 20px 64px;
-    display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 28px;
-    align-items: start;
-  }
-  @media (max-width: 700px) {
-    .page-wrap { grid-template-columns: 1fr; }
-    .sidebar { display: none; }
-  }
-
-  /* ── Main ── */
-  .main-content {
-    background: #fff;
-    border-radius: 8px;
-    padding: 28px 28px 32px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-  }
-  .main-content h1 {
-    font-size: 1.75rem;
-    color: #104224;
-    margin-bottom: 10px;
-    line-height: 1.3;
-    border-bottom: 3px solid #14532d;
-    padding-bottom: 12px;
-  }
-  .main-content .intro {
-    color: #555;
-    margin-bottom: 28px;
-    font-size: 1rem;
-  }
-  .article-card {
-    border: 1px solid #e5e7eb;
-    border-left: 4px solid #14532d;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 6px;
-    background: #fafafa;
-    transition: box-shadow 0.2s;
-  }
-  .article-card:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
-  .article-card h2 {
-    font-size: 1.1rem;
-    margin-bottom: 6px;
-  }
-  .article-card h2 a { color: #0066cc;  color: #104224;  }
-  .article-card .meta { color: #0066cc;  color: #6b7280; font-size: 0.9rem; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid #e5e7eb;  }
-  .article-card p { color: #555; font-size: 0.93rem; margin: 0; }
-
-  /* ── Categories ── */
-  .categories {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-  .cat-tag {
-    background: #14532d;
-    color: #fff;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-  }
-
-  /* ── Sidebar ── */
-  .sidebar { position: sticky; top: 70px; }
-  .sidebar-widget {
-    background: #14532d;
-    border-radius: 10px;
-    padding: 22px 18px;
-    color: #fff;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.13);
-    margin-bottom: 20px;
-  }
-  .sidebar-widget h3 { font-size: 1rem; margin-bottom: 8px; font-weight: 700; }
-  .sidebar-widget p { font-size: 0.86rem; margin-bottom: 12px; opacity: 0.9; }
-  .sidebar-widget input[type="email"] {
-    width: 100%; padding: 9px 11px; border: none; border-radius: 5px;
-    font-size: 0.88rem; margin-bottom: 8px; outline: none;
-  }
-  .sidebar-widget button {
-    width: 100%; padding: 10px; background: #fff; color: #14532d;
-    border: none; border-radius: 5px; font-weight: 700; font-size: 0.88rem;
-    cursor: pointer;
-  }
-  .sidebar-widget .disclaimer {
-    font-size: 0.7rem; opacity: 0.65; margin-top: 8px; text-align: center;
-  }
-  .sidebar-about {
-    background: #fff; border-radius: 8px; padding: 18px 16px;
-    font-size: 0.88rem; color: #444; line-height: 1.6;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-    margin-bottom: 20px;
-  }
-  .sidebar-about strong { color: #104224; display: block; margin-bottom: 6px; font-size: 0.95rem; }
-  .sidebar-links {
-    background: #fff; border-radius: 8px; padding: 16px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-  }
-  .sidebar-links h4 { font-size: 0.9rem; color: #104224; margin-bottom: 10px; }
-  .sidebar-links ul { list-style: none; }
-  .sidebar-links li { padding: 4px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.86rem; }
-  .sidebar-links li:last-child { border: none; }
-  .sidebar-links a { color: #0066cc;  color: #14532d;  }
-
-  /* ── Footer ── */
-  .footer {
-    background: #104224;
-    color: rgba(255,255,255,0.75);
-    text-align: center;
-    padding: 24px 16px;
-    font-size: 0.82rem;
-    margin-top: 40px;
-  }
-  .footer-nav { margin-bottom: 8px; }
-  .footer-nav a { color: #0066cc; 
-    color: rgba(255,255,255,0.85);
-    margin: 0 10px;
-    font-size: 0.85rem;
-   }
-
-  /* ── Bottom mobile bar (wariant bottom_mobile) ── */
-  #bottom-bar input[type="email"] { flex: 1; min-width: 0; }
-  @media (max-width: 480px) {
-    #bottom-bar span { display: none; }
-  }
-
-  /* ── Table styling ── */
-  table { width: 100%; border-collapse: collapse; margin: 20px 0 26px; font-size: 0.95rem; }
-  th { text-align: left; background: #eef2ff; color: #0f172a; padding: 12px 14px; border: 1px solid #dbe2ea; }
-  td { padding: 12px 14px; border: 1px solid #dbe2ea; vertical-align: top; }
-  
-  /* ── Heading spacing ── */
-  h2 { color: #0f172a; font-size: 1.45rem; margin: 38px 0 22px; line-height: 1.24; }
-  h3 { color: #14532d; font-size: 1.08rem; margin: 24px 0 16px; }
-  
-  /* ── Paragraph spacing ── */
-  p { margin-bottom: 18px; line-height: 1.8; }
-  article p:last-child { margin-bottom: 0; }
+  .article-breadcrumb { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 12px; color: #6b7280; font-size: 0.88rem; }
+  .article-breadcrumb a { color: #0066cc;  color: #6b7280;  }
+  .article-breadcrumb span[aria-current="page"] { color: #374151; font-weight: 600; }
 
 </style>
 </head>

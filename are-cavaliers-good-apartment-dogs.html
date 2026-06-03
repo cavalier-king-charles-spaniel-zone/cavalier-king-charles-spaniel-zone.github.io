@@ -97,14 +97,6 @@
   }
 
 
-  /* ── Email Widget ── */
-  .sidebar-widget {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 8px;
-    padding: 20px;
-    color: white;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-  }
   .sidebar-widget h3 {
     color: white;
     margin: 0 0 14px;
@@ -137,6 +129,53 @@
     background: #f0f0f0;
   }
 
+  .sidebar-widget {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  }
+  .sidebar-widget h3 {
+    color: white;
+    margin: 0 0 14px 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .sidebar-widget p {
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .sidebar-widget form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .sidebar-widget input[type="email"] {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  .sidebar-widget button {
+    padding: 10px 12px;
+    background: white;
+    color: #667eea;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .sidebar-widget button:hover {
+    background: #f0f0f0;
+  }
+  .sidebar-widget .disclaimer {
+    font-size: 0.75rem;
+    margin-top: 10px;
+  }
 </style>
 </head>
 <body>
